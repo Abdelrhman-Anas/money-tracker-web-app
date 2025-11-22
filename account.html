@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Beiruti:wght@200..900&display=swap" rel="stylesheet">
+
+    
+    <title>Account configuration</title>
+    <link rel="stylesheet" href="styles/account.css">
+  </head>
+  <body>
+    <div class="main">
+      <div class="topic-div">
+        <div class="topic">User Info</div>
+      </div>
+      <div class="inputs">
+        <div class="flex-box-1">
+          <div class="name-input-div">
+            <div class="name-text">Name :</div>
+            <input class="name-input js-name">
+            <div class="prob-text js-1"></div>
+          </div>
+          <div class="net-worth-div">
+            <div class="net-text">Net Worth :</div>
+            <input type="number" class="net-input js-money">
+            <div class="prob-text js-2"></div>
+          </div>
+          <div></div>
+        </div>
+        <div class="flex-box-2">
+          <div class="coun-input-div">
+            <div class="coun-text">country :</div>
+            <div class="selector-coun-div"></div>
+            <div class="prob-text js-3"></div>
+          </div>
+          <div></div>
+          <div class="lang-input-div">
+            <div class="lang-text">language :</div>
+            <div class="selector-lang-div"></div>
+            <div class="prob-text js-4"></div>
+          </div>
+          <div style="
+            width: 15px;
+          "></div>
+        </div>
+        
+        <div class="cur-input-div">
+          <div class="cur-text">Curancy :</div>
+          <div class="selector-curr-div"></div>
+        </div>
+      </div>
+      <div class="submit-div">
+        <button class="submit-button js-button">Let's Go</button>
+      </div>
+      <div class="warrenty-text">
+        <div class="frist-text">: ملاحظه</div>
+        <div class="second-text">هذا التطبيق يخزن البيانات داخل جهازك محلياً</div>
+        <div class="third-text">لذلك, هذا دليل واضح و قوي اننا لا نستطيع سرقت معلوماتك</div>
+      </div>
+      <div class="warrenty-text">
+        <div class="">Note:</div>
+        <div class="">This app save your Date in your device Localy</div>
+        <div class="">So, this is big clue that we can't stole your information from you.</div>
+      </div>
+    </div>
+
+    
+    <!--<script src="scripts/saving-file.js"></script>-->
+    <script type="module" src="scripts/account.js"></script>
+    <!--<script src="https://cdn.jsdelivr.net/npm/chart.js@4.5.1/dist/chart.umd.min.js"></script>-->
+    
+  </body>
+</html>
