@@ -44,6 +44,9 @@ body {
   align-items: center;
   justify-content: space-between;
 }
+.flex-box-2 {
+  
+}
 .net-worth-div,
 .name-input-div {
   display: flex;
@@ -146,7 +149,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-top: 25px;
+  margin-top: 15px;
 }
 .submit-button {
   width: 160px;
