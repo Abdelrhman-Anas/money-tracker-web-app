@@ -1,4 +1,5 @@
 import { countries } from '../data/countries.js';
+import { languages } from '../data/language.js';
 import { userName, TotalMoney, country, lang, currancy } from '../data/user-data.js';
 //data variables
 let us;
@@ -9,11 +10,15 @@ let cu;
 // elements inside the html
 const counElement = document.querySelector('.viewer-coun-div');
 const counResult = document.querySelector('.selector-coun-div');
-
+const langELement = document.querySelector('.viewer-lang-div');
+const langResult = document.querySelector('.selector-lang-div');
 //click tracker
 document.addEventListener('click', (e) => {
   if (!(e.target === counResult)) {
-   counElement.innerHTML = ''; 
+    counElement.innerHTML = ''; 
+  };
+  if (!(e.target === langResult)) {
+    langELement.innerHTML = '';
   }
 });
 //country selector
@@ -23,8 +28,7 @@ counResult.addEventListener('click', () => {
     const name = country.country;
     const theValue = country.code;
     html += 
-      `<div class="coun-div" data-coun="${theValue}" onclick="
-      ">
+      `<div class="coun-div" data-coun="${theValue}">
         <span class="fi fi-${theValue} coun-pic"></span> <div class="coun-name">${name}</div>
       </div>`;
   });
@@ -44,6 +48,38 @@ counResult.addEventListener('click', () => {
       counElement.innerHTML = '';
     });
   });
+});
+//language selector
+langResult.addEventListener('click', () => {
+  let html = '';
+  languages.forEach((lang) => {
+    const name = lang.lang;
+    const theValue = lang.code;
+    html += 
+      `<div class="lang-div" data-lang="${theValue}">
+        <span class="fi fi-${theValue} lang-pic"></span> <div class="lang-name">${name}</div>
+      </div>`;
+  });
+  langELement.innerHTML = html;
+
+
+  document.querySelectorAll('.lang-div').forEach((lang) => {
+    lang.addEventListener('click', () => {
+      const langValue = lang.dataset.lang;
+      let langData;
+      languages.forEach((language) => {
+        if (langValue === language.code) {
+          langData = language;
+        };
+      });
+      la = langData.code;
+      console.log(la);
+      langELement.innerHTML = '';
+      langResult.innerHTML = 
+        `<span class="fi fi-${langData.code} coun-pic"></span> <div class="lang-name">${langData.lang}</div>`;
+    });
+  })
+    
 });
 
 

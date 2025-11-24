@@ -1,6 +1,7 @@
 export const countries = [
   { country: "Afghanistan", currency: "AFN",code: "af", symbol: "؋", name: "Afghan Afghani" },
   {country: "USA", currency: "USD",code: "us", symbol: "$", name: "US Dollar"},
+  {country: "Saudi Arabia", currency: "SAR",code: "sa", symbol: "ر.س",  name: "Saudi Riyal"},
   { country: "Albania", currency: "ALL",code: "al", symbol: "L", name: "Albanian Lek" },
   { country: "Algeria", currency: "DZD",code: "dz", symbol: "دج", name: "Algerian Dinar" },
   { country: "Andorra", currency: "EUR",code: "ad", symbol: "€", name: "Euro" },

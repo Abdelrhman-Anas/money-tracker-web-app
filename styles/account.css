@@ -98,7 +98,7 @@ body {
   border-top-left-radius: 5px;
   
 }
-
+.viewer-lang-div,
 .viewer-coun-div {
   position: absolute;
   bottom: -px;
@@ -115,19 +115,23 @@ body {
   border-top-left-radius: 0;
   z-index: 1;
 }
+.viewer-lang-div::-webkit-scrollbar,
 .viewer-coun-div::-webkit-scrollbar {
   background-color: transparent;
   width: 0px;
 }
+.lang-div,
 .coun-div {
   display: flex;
   justify-content: space-between;
   padding: 0px 3px;
 }
+.lang-pic,
 .coun-pic {
   width: 18px;
   margin-left: 2px;
 }
+.lang-name,
 .coun-name {
   font-size: 17px;
 }
