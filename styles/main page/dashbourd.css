@@ -1,0 +1,206 @@
+/*font-family: "Bebas Neue", arial; te bigger font 
+font-family: "Edu NSW ACT Cursive", arial; the smallest one
+font-family: "Inconsolata", monospace;
+font-family: "Momo Trust Display", arial;
+font-family: "Beiruti", arial;*/
+
+.main-section {
+  background-color: white;
+  width: 750px;
+  height: 440px;
+  display: flex;
+  font-family: "Beiruti", arial;
+  border-radius: 5px;
+  box-shadow: 0px 2px 10px 8px rgba(0, 0, 0, 0.15);
+  color: black;
+}
+.calc-area {
+  width: 300px;
+  margin: 25px;
+}
+.total-div {
+  display: flex;
+  align-items:center;
+
+}
+.total {
+  border: 1px solid rgba(196, 196, 196, 0.87);
+  height: 31px;
+  width: 150px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  font-family: "Inconsolata", monospace;
+}
+.work-area {
+  width: 450px;
+  height: 450px;
+  margin-right: 20px;
+  margin-top: 20px;
+}
+.title {
+  font-size: 30px;
+}
+.border-div {
+  border: 1px solid rgba(196, 196, 196, 0.87);
+  border-radius: 5px;
+}
+.choose-section {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.buttonAB {
+  width: 100%;
+  height: 35px;
+  font-family: "Beiruti", arial;
+  font-size: 21px;
+  border: none;
+  border-radius: 0px;
+  cursor: pointer;
+  background-color: #e7e6e6;
+  border-bottom: 1px solid rgba(196, 196, 196, 0.87);
+}
+.buttonA {
+  border-top-left-radius: 5px;
+  border-right: 1px solid rgba(196, 196, 196, 0.87);
+}
+.buttonB {
+  border-top-right-radius: 5px;
+}
+.button-active {
+  box-shadow: inset 0px 2px 4px 3px rgba(0, 0, 0, 0.15);
+}
+.input-data {
+  padding: 10px;
+}
+.compine-div-1,
+.compine-div-2 {
+  margin-top: 30px;
+}
+.compine-div-1 {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.text-input-div,
+.date-input-div,
+.money-input-div,
+.note-input-div {
+  padding: 0px 10px 20px 0px;
+}
+.money-input-div,
+.date-input-div {
+  padding: 26px 10px 20px 0px; 
+}
+.money-input-div {
+  padding: 29px 10px 7px 0px; 
+}
+.money-alert {
+  color: rgb(224, 47, 47);
+  font-family: arial;
+  font-weight: 500;
+  opacity: 0;
+  transition: opacity 0.2s ease-in;
+}
+.money-alert-if {
+  opacity: 1;
+}
+
+.input-disc {
+  margin-bottom: 3px;
+  font-family: "Beiruti", arial;
+  font-size: 23px;
+}
+.small-text-input-div {
+  display: flex;
+}
+.text-input,
+.note-input {
+  width: 200px;
+  border-radius: 5px;
+  border: none;
+  height: 30px;
+  padding-left: 15px;
+  padding-right: 15px;
+  font-size: 16px;
+  background-color: rgb(232, 232, 232);
+}
+.money-input,
+.date-input {
+  display: flex;
+  justify-content: center;
+  width: 125px;
+  border-radius: 5px;
+  border: none;
+  height: 32px;
+
+  padding: 0px 10px;
+  font-size: 16px;
+  background-color: rgb(232, 232, 232);
+}
+.date-input {
+  margin-right: 5px;
+}
+.money-input {
+  height: 32px;
+  width: 85px;
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+  font-family: "Inconsolata", monospace;
+}
+.inputs-money {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.gab-2 {
+  padding: 10px;
+}
+.currunt-cur {
+  background-color: #c3c2c2;
+  width: 40px;
+  height: 32px;
+  border-radius: 5px;
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 17px;
+  font-family: arial;
+}
+.text-input:focus,
+.date-input:focus,
+.money-input:focus,
+.note-input:focus {
+  outline: none;
+}
+.compine-div-2 {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+.submit-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0px 10px 10px 10px;
+}
+.submit-button {
+  width: 130px;
+  height: 35px;
+  color: white;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 21px;
+  font-family: "Beiruti", arial;
+  margin-right: 5px;
+  background-color: black;
+  border-radius: 5px;
+  transition: background-color 0.15s;
+  cursor: pointer;
+}
