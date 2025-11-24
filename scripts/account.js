@@ -1,15 +1,51 @@
 import { countries } from '../data/countries.js';
+import { userName, TotalMoney, country, lang, currancy } from '../data/user-data.js';
+//data variables
+let us;
+let to;
+let co;
+let la;
+let cu;
+// elements inside the html
+const counElement = document.querySelector('.viewer-coun-div');
+const counResult = document.querySelector('.selector-coun-div');
 
-document.querySelector('.selector-coun-div').addEventListener('click', () => {
+//click tracker
+document.addEventListener('click', (e) => {
+  if (!(e.target === counResult)) {
+   counElement.innerHTML = ''; 
+  }
+});
+//country selector
+counResult.addEventListener('click', () => {
   let html = '';
   countries.forEach((country) => {
     const name = country.country;
-    const theValue = country.currency;
+    const theValue = country.code;
     html += 
-      `<div class="coun-name" value="${theValue}">${name}</div>`;
+      `<div class="coun-div" data-coun="${theValue}" onclick="
+      ">
+        <span class="fi fi-${theValue} coun-pic"></span> <div class="coun-name">${name}</div>
+      </div>`;
   });
-  console.log(html);
+  counElement.innerHTML = html;
+  document.querySelectorAll('.coun-div').forEach((button) => {
+    button.addEventListener('click', () => {
+      const buttonValue = button.dataset.coun;
+      let counData;
+      countries.forEach((coun) => {
+        if (coun.code === buttonValue) {
+          counData = coun;
+        }
+      });
+      co = counData.code;
+      console.log(co);
+      counResult.innerHTML = `<span class="fi fi-${counData.code} coun-pic"></span> <div class="coun-name">${counData.country}</div>`;
+      counElement.innerHTML = '';
+    });
+  });
 });
+
 
 
 const fristProb = document.querySelector('.js-1');
@@ -21,8 +57,8 @@ document.querySelector('.js-button').addEventListener('click', () => {
   submit();
 });
 function submit() {
-  const nameElement = document.querySelector('.js-name').value.trim();
-  const curElement = document.querySelector('.cur-selector').value;
+  const nameElement = document.querySelector('.js-name').value.trim() || '';
+  //const curElement = document.querySelector('.cur-selector') || 'EG';
   if (nameElement.length === 0) {
     fristProb.innerHTML = 'Please put a name';
     proNum1 = 1;
