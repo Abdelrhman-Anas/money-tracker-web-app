@@ -1,6 +1,6 @@
 import { countries } from '../data/countries.js';
 import { languages } from '../data/language.js';
-import { userName, TotalMoney, country, lang, currancy } from '../data/user-data.js';
+import { userName, TotalMoney, country, lang, currency } from '../data/user-data.js';
 //data variables
 let us;
 let to;
@@ -12,6 +12,8 @@ const counElement = document.querySelector('.viewer-coun-div');
 const counResult = document.querySelector('.selector-coun-div');
 const langELement = document.querySelector('.viewer-lang-div');
 const langResult = document.querySelector('.selector-lang-div');
+const currELement = document.querySelector('.viewer-curr-div');
+const currResult = document.querySelector('.selector-curr-div');
 //click tracker
 document.addEventListener('click', (e) => {
   if (!(e.target === counResult)) {
@@ -19,6 +21,9 @@ document.addEventListener('click', (e) => {
   };
   if (!(e.target === langResult)) {
     langELement.innerHTML = '';
+  };
+  if (!(e.target === currResult)) {
+    currELement.innerHTML = '';
   }
 });
 //country selector
@@ -61,8 +66,6 @@ langResult.addEventListener('click', () => {
       </div>`;
   });
   langELement.innerHTML = html;
-
-
   document.querySelectorAll('.lang-div').forEach((lang) => {
     lang.addEventListener('click', () => {
       const langValue = lang.dataset.lang;
@@ -78,39 +81,36 @@ langResult.addEventListener('click', () => {
       langResult.innerHTML = 
         `<span class="fi fi-${langData.code} coun-pic"></span> <div class="lang-name">${langData.lang}</div>`;
     });
-  })
-    
+  })   
+});
+//currency selector
+currResult.addEventListener('click', () => {
+  let html = '';
+  countries.forEach((coun) => {
+    const theCurr = coun.currency;
+    const theValue = coun.code;
+    html += 
+      `<div class="curr-div" data-curr="${theValue}">
+        <span class="fi fi-${theValue} curr-pic"></span> <div class="curr-name">${theCurr}</div>
+      </div>`;
+  });
+  currELement.innerHTML = html;
+  document.querySelectorAll('.curr-div').forEach((curr) => {
+    curr.addEventListener('click', () => {
+      const currValue = curr.dataset.curr;
+      let currData;
+      countries.forEach((coun) => {
+        if (currValue === coun.code) {
+          currData = coun;
+        };
+      });
+      cu = currData.currency;
+      console.log(cu);
+      currELement.innerHTML = '';
+      currResult.innerHTML = 
+        `<span class="fi fi-${currData.code} curr-pic"></span> <div class="curr-name">${currData.currency}</div>`;
+    });
+  })   
 });
 
 
-
-const fristProb = document.querySelector('.js-1');
-const secondProb = document.querySelector('.js-2');
-
-let proNum1 = 0;
-let proNum2 = 0;
-document.querySelector('.js-button').addEventListener('click', () => {
-  submit();
-});
-function submit() {
-  const nameElement = document.querySelector('.js-name').value.trim() || '';
-  //const curElement = document.querySelector('.cur-selector') || 'EG';
-  if (nameElement.length === 0) {
-    fristProb.innerHTML = 'Please put a name';
-    proNum1 = 1;
-  } else if (nameElement.length >= 30) {
-    fristProb.innerHTML = 'name should have less than 30 letters'
-    proNum1 = 1;
-  } else if ((nameElement.length > 1) && (nameElement.length < 30)) {
-    fristProb.innerHTML = '';
-    proNum1 = 0;
-  };
-  
-  if ((proNum1 === 0) && (proNum2 === 0)) {
-    localStorage.setItem('userName', JSON.stringify(nameElement));
-    localStorage.setItem('totalMoney', JSON.stringify(moneyElement));
-    localStorage.setItem('currancy', JSON.stringify(curElement));
-    window.location.href = 'home.html';
-  };
-  console.log(nameElement.length)
-};

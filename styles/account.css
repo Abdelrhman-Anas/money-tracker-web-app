@@ -26,6 +26,7 @@ body {
   display: flex;
   flex-direction: column;
   border-radius: 14px;
+  
 }
 .topic-div {
   display: flex;
@@ -52,7 +53,7 @@ body {
 .net-input {
   height: 30px;
   width: 120px;
-  font-size: 20px;
+  font-size: 15px;
   font-weight: 500;
   border-radius: 5px;
   padding: 0px 12px;
@@ -88,6 +89,7 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-between;
+  cursor: pointer;
 }
 .selector-curr-div-l,
 .selector-lang-div-l,
@@ -96,17 +98,17 @@ body {
   border-bottom-right-radius: 0;
   border-top-right-radius: 5px;
   border-top-left-radius: 5px;
-  
 }
+.viewer-curr-div,
 .viewer-lang-div,
 .viewer-coun-div {
   position: absolute;
-  bottom: -px;
   width: 150px;
   max-height: 150px;
   overflow-y: scroll;
   border: none;
   border-radius: 5px;
+  cursor: pointer;
   
   background-color: rgb(232, 232, 232);
   border-bottom-left-radius: 5px;
@@ -115,22 +117,26 @@ body {
   border-top-left-radius: 0;
   z-index: 1;
 }
+.viewer-curr-div::-webkit-scrollbar,
 .viewer-lang-div::-webkit-scrollbar,
 .viewer-coun-div::-webkit-scrollbar {
   background-color: transparent;
   width: 0px;
 }
+.curr-div,
 .lang-div,
 .coun-div {
   display: flex;
   justify-content: space-between;
   padding: 0px 3px;
 }
+.curr-pic,
 .lang-pic,
 .coun-pic {
   width: 18px;
   margin-left: 2px;
 }
+.curr-name,
 .lang-name,
 .coun-name {
   font-size: 17px;
