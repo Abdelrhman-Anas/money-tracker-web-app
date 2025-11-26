@@ -1,5 +1,5 @@
 import { countries } from '../data/countries.js';
-import { userName, totalMoney, country, language, currency, trackerIn, trackerOut, inTages, outTages } from '../data/user-data.js';
+import { userName, totalMoney, country, language, currency, trackerIn, trackerOut } from '../data/user-data.js';
 import { dash } from './dashbourd.js';
 let page = 0;
 // html elements
@@ -46,7 +46,7 @@ dashElement.addEventListener('click', () => {
 thePage();
 function thePage() {
   if (page === 0) {
-    dash(language, totalMoney, currency, bodyElement, trackerIn, trackerOut, inTages, outTages);
+    dash(language, totalMoney, currency, bodyElement, trackerIn, trackerOut);
   } else if (page === 1) {
     trans();
   } else if (page === 2) {
@@ -54,4 +54,4 @@ function thePage() {
   } else if (page === 3) {
     sitt();
   }
-}
+};
