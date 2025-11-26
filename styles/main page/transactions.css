@@ -1,0 +1,149 @@
+/*font-family: "Bebas Neue", arial; te bigger font 
+font-family: "Edu NSW ACT Cursive", arial; the smallest one
+font-family: "Inconsolata", monospace;
+font-family: "Momo Trust Display", arial;
+font-family: "Beiruti", arial;*/
+
+
+.main-section-t {
+  width: 750px;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+}
+.indecators {
+  position: fixed;
+  left: 0px;
+  right: 0;
+  top: 73px;
+  margin-left: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.inde-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 310px;
+}
+.inde-button {
+  width: 150px;
+  height: 40px;
+  border-radius: 20px;
+  border: none;
+  font-size: 20px;
+  font-family: "Beiruti", arial;
+  color: #2C3E50;
+  background-color: #BDC3C7;
+  cursor: pointer;
+}
+.in-inde-c {
+  color: rgb(53, 130, 53);
+}
+.out-inde-c {
+  color: rgb(180, 38, 38);
+}
+.margin {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.a-trans {
+  border-bottom: 1px solid rgb(173, 168, 168);
+  padding: 10px;
+}
+.flex-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 30px;
+  width: 100%;
+}
+.date {
+  font-size: 16px;
+  font-family: "Inconsolata", monospace;
+}
+.discrip {
+  font-family: "Beiruti", arial;
+  font-size: 26px;
+  font-weight: 500;
+}
+.money-amount-div-in {
+  font-family: arial;
+  display: flex;
+  color: rgb(64, 163, 64);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.money-amount-div-out {
+  font-family: arial;
+  display: flex;
+  color: rgb(189, 41, 41);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.total-div {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cur {
+  font-size: 14px;
+}
+.currr {
+  font-size: 16px;
+  margin-left: 5px;
+}
+.money-amount {
+  font-family: "Inconsolata", monospace;
+  
+}
+.remove-button {
+  width: 35px;
+  height: 35px;
+  padding: 6px;
+  margin-right: 10px;
+  border-radius: 20px;
+  border: none;
+  transition: all 0.15s;
+  background-color: transparent;
+  cursor: pointer;
+}
+.remove-button:hover {
+  background-color: rgb(216, 216, 216);
+}
+.remove-pic {
+  width: 100%;
+}
+.note-div {
+  font-size: 17px;
+  font-family: arial;
+}
+/* if the array is empty*/
+.nothing {
+  display: flex;
+  width: 100%;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px;
+}
+.nothing-pic-div {
+  height: 150px;
+  width: 150px;
+}
+.nothing-pic {
+  width: 100%;
+}
+.nothing-text {
+  margin-top: 20px;
+  margin-bottom: 20px;
+  font-family: "Beiruti", arial;;
+  font-size: 23px;
+  display: flex;
+  justify-content: center;
+}

@@ -1,6 +1,8 @@
 ////function for generating the HTML of dashbourd page////
 //exporting it to the main file 
 export function dash(lang, totalMoney, currency, bodyElement, trackerIn, trackerOut) {
+  bodyElement.classList.remove('main-section-t', 'main-section-r', 'main-section-s');
+  bodyElement.classList.add('main-section-d');
   //finding if the user choosed english or arabic 
   if (lang === 'sa') {
     bodyElement.innerHTML = `

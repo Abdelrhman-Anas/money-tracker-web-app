@@ -1,7 +1,7 @@
 import { countries } from '../data/countries.js';
 import { userName, totalMoney, country, language, currency, trackerIn, trackerOut } from '../data/user-data.js';
 import { dash } from './dashbourd.js';
-let page = 0;
+import { trans } from './transactions.js'
 // html elements
 const dashName = document.querySelector('.page1');
 const transName = document.querySelector('.page2');
@@ -9,7 +9,9 @@ const repoName = document.querySelector('.page3');
 const sitName = document.querySelector('.page4');
 const helloName = document.querySelector('.hello-div');
 const nameName = document.querySelector('.user-name');
+//
 const bodyElement = document.querySelector('.main-section');
+const indeElement = document.querySelector('.indecators');
 //
 const dashElement = document.querySelector('.dashbourd-div');
 //
@@ -38,17 +40,28 @@ if (language === 'sa') {
   sitName.innerHTML = 'Sittings';
   helloName.innerHTML = 'welcome /';
 };
-// dashbourd 
-dashElement.addEventListener('click', () => {
-  page = 0;
+// switcher
+let page = 0;
+function switchPage(newPage) {
+  page = newPage;
+  console.log("Switching to page:", page);
   thePage();
+}
+// dashbourd
+dashElement.addEventListener('click', () => {
+  switchPage(0);
 });
+// transactions
+transElement.addEventListener('click', () => {
+  switchPage(1)
+});
+let pageHtml = bodyElement.innerHTML;
 thePage();
 function thePage() {
-  if (page === 0) {
+  if (page === 1) {
     dash(language, totalMoney, currency, bodyElement, trackerIn, trackerOut);
-  } else if (page === 1) {
-    trans();
+  } else if (page === 0) {
+    trans(bodyElement, indeElement, trackerIn, trackerOut, language, currency);
   } else if (page === 2) {
     repo();
   } else if (page === 3) {
