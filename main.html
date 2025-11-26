@@ -1,135 +1,82 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!--to make the web suitable for small divices like phones and tablets-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
+    <!--linking the external library of the countries flages-->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/lipis/flag-icons@7.3.2/css/flag-icons.min.css"/>
+    <!--a font from google fonts web-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Edu+NSW+ACT+Cursive:wght@400..700&display=swap" rel="stylesheet">
-
+    <!--another font-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wdth,wght@50..200,200..900&display=swap" rel="stylesheet">
-
+    <!--and another one (font)-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inconsolata:wdth,wght@50..200,200..900&family=Momo+Trust+Display&display=swap" rel="stylesheet">
-
+    <!--and the last one (font)-->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Beiruti:wght@200..900&display=swap" rel="stylesheet">
-
+    <!--linking the CSS files for each specific page-->
     <link rel="stylesheet" href="styles/main page/static.css">
     <link rel="stylesheet" href="styles/main page/dashbourd.css">
     <link rel="stylesheet" href="styles/main page/transactions.css">
     <link rel="stylesheet" href="styles/main page/report.css">
     <link rel="stylesheet" href="styles/main page/sitting.css">
     
-
+    <!--the title and the icon of the web-->
     <title>Money Tracker</title>
+    <link rel="icon" type="img/svg" src="icons-images/images/logo-dollar-sign.svg">
   </head>
   <body>
+    <!--the header element that contain the pages buttons and the user name-->
     <header class="header">
       <div class="pages-div">
         <div class="dashbourd-div a">
-          <div class="page-name">Dashbourd</div>
+          <div class="page-name page1">Dashbourd</div>
           <div class="pic-div">
             <img class="page-pic">
           </div>
         </div>
         <div class="transactions-div a">
-          <div class="page-name">Transactions</div>
+          <div class="page-name page2"></div>
           <div class="pic-div">
             <img class="page-pic">
           </div>
         </div>
         <div class="report-div a">
-          <div class="page-name">Report</div>
+          <div class="page-name page3">Report</div>
           <div class="pic-div">
             <img class="page-pic">
           </div>
         </div>
         <div class="sittings-div a">
-          <div class="page-name">Sittings</div>
+          <div class="page-name page4">Sittings</div>
           <div class="pic-div">
             <img class="page-pic">
           </div>
         </div>
       </div>
       <div class="header-info">
-        <div></div>
+        <div class="country-div">
+          
+        </div>
         <div class="user-name-div">
-          Welcome/ <span class="user-name">Abdelrhman anas</span>
+          <span class="hello-div">Welcome/</span> <span class="user-name">Abdelrhman anas</span>
         </div>
         <div></div>
       </div>
     </header>
-
+    <!--the element that the HTML is generated with javaScript-->
     <div class="main-section">
-      <div class="calc-area">
-        <div class="title">Net Worth :</div>
-        <div class="total-div">
-          <div class="total">00.00</div>
-          <div class="currunt-cur">$</div>
-        </div>
-      </div>
-
-      <div class="work-area">
-        <div class="title-div">
-          <div class="title">New Transaction :</div>
-        </div>
-        <div class="border-div">
-          <div class="choose-section">
-            <button class="buttonA buttonAB js-if-in">Income</button>
-            <div class="gab"></div>
-            <button class="buttonB buttonAB js-if-out">Expense</button>
-          </div>
-
-          
-          <div class="input-data">
-
-            <div class="compine-div-1">
-              <div class="text-input-div">
-                <div class="input-disc">tags :</div>
-                <div class="small-text-input-div">
-                  <input type="text" class="js-text-input text-input">
-                </div>
-              </div>
-
-              <div class="date-input-div">
-                <div class="input-disc"></div>
-                <input type="date" class="js-date-input date-input">
-                
-              </div>
-            </div>
-            
-            <div class="compine-div-2">
-              <div class="note-input-div">
-                <div class="input-disc">Note :</div>
-                <input type="text" class="js-note-input note-input">
-                <div class="gab-2"></div>
-              </div>
-              <div class="money-input-div">
-                
-                <div class="inputs-money">
-                  <input type="number" class="js-money-input money-input">
-                  <div class="currunt-cur">&dollar;</div>
-                </div>
-                <div class="money-alert">Please put an amount</div>
-              </div>
-            </div>
-            <div class="submit-div">
-              <div></div>
-              <div class="submit-button" 
-                onclick="saving();"
-              >Add Income</div>
-            </div>
-          </div>
-        </div>
-      </div>
+      
     </div>
-
-    
+    <!--the script tage that have the link to the main JS file-->
+    <script type="module" src="scripts/main.js"></script>
   </body>
 </html>

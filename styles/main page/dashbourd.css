@@ -61,6 +61,7 @@ font-family: "Beiruti", arial;*/
   cursor: pointer;
   background-color: #e7e6e6;
   border-bottom: 1px solid rgba(196, 196, 196, 0.87);
+  transition: all 0.15s;
 }
 .buttonA {
   border-top-left-radius: 5px;
@@ -69,8 +70,13 @@ font-family: "Beiruti", arial;*/
 .buttonB {
   border-top-right-radius: 5px;
 }
-.button-active {
+.button-active-in {
   box-shadow: inset 0px 2px 4px 3px rgba(0, 0, 0, 0.15);
+  color: rgb(36, 150, 36);
+}
+.button-active-out {
+  box-shadow: inset 0px 2px 4px 3px rgba(0, 0, 0, 0.15);
+  color: rgb(215, 48, 48);
 }
 .input-data {
   padding: 10px;
@@ -103,6 +109,8 @@ font-family: "Beiruti", arial;*/
   font-weight: 500;
   opacity: 0;
   transition: opacity 0.2s ease-in;
+  font-size: 14px;
+  padding-bottom: 15px;
 }
 .money-alert-if {
   opacity: 1;
@@ -169,7 +177,7 @@ font-family: "Beiruti", arial;*/
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 17px;
+  font-size: 13px;
   font-family: arial;
 }
 .text-input:focus,

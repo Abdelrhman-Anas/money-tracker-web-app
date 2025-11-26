@@ -1,6 +1,6 @@
 import { countries } from '../data/countries.js';
 import { languages } from '../data/language.js';
-import { userName, TotalMoney, country, language, currency } from '../data/user-data.js';
+import { userName, totalMoney, country, language, currency } from '../data/user-data.js';
 //data variables
 let to;
 let co;
@@ -147,12 +147,12 @@ subButton.addEventListener('click', () => {
   };userName, TotalMoney, country, language, currency
   if (co && la && cu && to && (nameValue.length > 0)) {
     userName = nameValue;
-    TotalMoney = to;
+    totalMoney = to;
     country = co;
     language = la;
     currency = cu;
     localStorage.setItem('userName', JSON.stringify(userName));
-    localStorage.setItem('TotalMoney', JSON.stringify(TotalMoney));
+    localStorage.setItem('totalMoney', JSON.stringify(totalMoney));
     localStorage.setItem('country', JSON.stringify(country));
     localStorage.setItem('language', JSON.stringify(language));
     localStorage.setItem('currency', JSON.stringify(currency));
