@@ -1,6 +1,7 @@
 ////function for generating the HTML of dashbourd page////
 //exporting it to the main file 
-export function dash(lang, totalMoney, currency, bodyElement, trackerIn, trackerOut) {
+export function dash(lang, totalMoney, currency, bodyElement, indeElement, trackerIn, trackerOut) {
+  indeElement.innerHTML = '';
   bodyElement.classList.remove('main-section-t', 'main-section-r', 'main-section-s');
   bodyElement.classList.add('main-section-d');
   //finding if the user choosed english or arabic 
@@ -210,6 +211,7 @@ export function dash(lang, totalMoney, currency, bodyElement, trackerIn, tracker
           disc: disc.value,
           date: dayMonth,
           fullDate: aDate,
+          month: new Date(aDate).getMonth(),
           money: Number(money.value),
           note: note.value
         });
@@ -218,6 +220,7 @@ export function dash(lang, totalMoney, currency, bodyElement, trackerIn, tracker
           disc: disc.value,
           date: dayMonth,
           fullDate: aDate,
+          month: new Date(aDate).getMonth(),
           money: Number(-money.value),
           note: note.value
         });
