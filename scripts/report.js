@@ -14,7 +14,7 @@ const months = [
 ];
 const days = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30];
 
-export function repo(bodyElement, indeElement, Chart, lang, trackerIn, trackerOut) {
+export function repo(bodyElement, indeElement, Chart, lang, trackerIn, trackerOut, totalIn, totalOut) {
   indeElement.innerHTML = '';
   bodyElement.classList.remove('main-section-t', 'main-section-d', 'main-section-s');
   bodyElement.classList.add('main-section-r');
@@ -33,7 +33,22 @@ export function repo(bodyElement, indeElement, Chart, lang, trackerIn, trackerOu
   function htmlGenerator() {
     if (lang === 'sa') {
       bodyElement.innerHTML = `
-        <div class="the-total"></div>
+        <div class="the-total-div">
+          <div></div>
+          <div class="in-total">
+            <div class="title-div">إجمالي الدخل :</div>
+            <div class="in-value-div">
+              <span class="in-value">${totalIn(trackerIn)}<span> <span class="currr">EGP</span>
+            </div>
+          </div>
+          <div class="out-total">
+            <div class="title-div">إجمالي المصروفات :</div>
+            <div class="out-value-div">
+              <span class="out-value">${totalOut(trackerOut)}<span> <span class="currr">EGP</span>
+            </div>
+          </div>
+          <div></div>
+        </div>
         <div class="container-1-div">
           <div class="buttons-div">
             <button class="year-1">بالسنه</button>
@@ -44,15 +59,29 @@ export function repo(bodyElement, indeElement, Chart, lang, trackerIn, trackerOu
         </div>`;
     } else if (lang === 'us') {
       bodyElement.innerHTML = `
-        <div class="the-total"></div>
+        <div class="the-total-div">
+          <div></div>
+          <div class="in-total">
+            <div class="title-div">Total Incomes :</div>
+            <div class="in-value-div">
+              <span class="in-value">${totalIn(trackerIn)}<span> <span class="currr">EGP</span>
+            </div>
+          </div>
+          <div class="out-total">
+            <div class="title-div">Total Expense :</div>
+            <div class="out-value-div">
+              <span class="out-value">${totalOut(trackerOut)}<span> <span class="currr">EGP</span>
+            </div>
+          </div>
+          <div></div>
+        </div>
         <div class="container-1-div">
           <div class="buttons-div">
-            <button class="year-1">by year</button>
-            <button class="month-1">by month</button>
+            <button class="year-1">by Year</button>
+            <button class="month-1">by Month</button>
           </div>
           <div class="can-div-1">
-            <canvas class="chart-1"></canvas>
-          </div>
+          <canvas class="chart-1"></canvas>
         </div>`;
     }
     canvElement = document.querySelector('.can-div-1');
@@ -90,8 +119,6 @@ export function repo(bodyElement, indeElement, Chart, lang, trackerIn, trackerOu
         resultOut.push(trans);
       }
     });
-    console.log(resultIn);
-    console.log(resultOut);
     //
     const finalDIn = sumDays(resultIn);
     const finalDOut = sumDays(resultOut);
@@ -112,7 +139,6 @@ export function repo(bodyElement, indeElement, Chart, lang, trackerIn, trackerOu
     return Object.values(map);
   };
   function getDataOutDay(inn, out) {
-    console.log(inn);
     let resultIn = [];
     let resultOut = [];
     days.forEach((nDay) => {
@@ -154,8 +180,6 @@ export function repo(bodyElement, indeElement, Chart, lang, trackerIn, trackerOu
       }
       
     });
-    console.log(resultIn);
-    console.log(resultOut);
     chart1(resultIn, resultOut, days);
   }
   // by year
@@ -240,8 +264,6 @@ export function repo(bodyElement, indeElement, Chart, lang, trackerIn, trackerOu
         resultOut.push(i);
       }
     }); 
-    console.log(resultIn);
-    console.log(resultOut);
     chart1(resultIn, resultOut, months);
   }
 
@@ -277,11 +299,26 @@ export function repo(bodyElement, indeElement, Chart, lang, trackerIn, trackerOu
         }
     });
   }
+  colorChange();
+  function colorChange() {
+    const year = document.querySelector('.year-1');
+    const month = document.querySelector('.month-1');
+    year.classList.remove('active');
+    month.classList.remove('active');
+    if (YorM === 0) {
+      month.classList.add('active');
+    } else if (YorM === 1) {
+      year.classList.add('active');
+    }
+  }
   document.querySelector('.year-1').addEventListener('click', () => {
     byYear();
+    YorM = 1;
+    colorChange();
   });
   document.querySelector('.month-1').addEventListener('click', () => {
     byMounth();
-    console.log('fuck');
+    YorM = 0;
+    colorChange();
   });
 };

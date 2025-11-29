@@ -1,6 +1,6 @@
 ////function for generating the HTML of dashbourd page////
 //exporting it to the main file 
-export function dash(lang, totalMoney, currency, bodyElement, indeElement, trackerIn, trackerOut) {
+export function dash(lang, totalMoney, currency, bodyElement, indeElement, trackerIn, trackerOut, totalAll) {
   indeElement.innerHTML = '';
   bodyElement.classList.remove('main-section-t', 'main-section-r', 'main-section-s');
   bodyElement.classList.add('main-section-d');
@@ -10,7 +10,7 @@ export function dash(lang, totalMoney, currency, bodyElement, indeElement, track
     <div class="calc-area">
         <div class="title"> صافي الثروة </div>
         <div class="total-div">
-          <div class="total"> ${totalMoney}</div>
+          <div class="total">${totalAll(trackerIn, trackerOut)}</div>
           <div class="currunt-cur">${currency}</div>
         </div>
       </div>
@@ -72,7 +72,7 @@ export function dash(lang, totalMoney, currency, bodyElement, indeElement, track
       `<div class="calc-area">
         <div class="title">Net Worth :</div>
         <div class="total-div">
-          <div class="total">${totalMoney}</div>
+          <div class="total">${totalAll(trackerIn, trackerOut, totalMoney)}</div>
           <div class="currunt-cur">${currency}</div>
         </div>
       </div>
@@ -129,6 +129,18 @@ export function dash(lang, totalMoney, currency, bodyElement, indeElement, track
         </div>
       </div>`;
   };
+  //
+  const totalElement = document.querySelector('.total');
+  rightColor();
+  function rightColor() {
+    totalElement.classList.remove('total-if-po', 'total-if-ne');
+    const total = totalAll(trackerIn, trackerOut, totalMoney);
+    if (total > 0) {
+      totalElement.classList.add('total-if-po');
+    } else if (total < 0) {
+      totalElement.classList.add('total-if-ne');
+    }
+  }
   // buttons Elements
   const submitElement = document.querySelector('.submit-button');
   const inElement = document.querySelector('.js-if-in');
@@ -182,7 +194,6 @@ export function dash(lang, totalMoney, currency, bodyElement, indeElement, track
   const alertElement = document.querySelector('.money-alert');
   let timeOut;
   submitElement.addEventListener('click', () => {
-    console.log(date.value)
     if ((money.value === '' || money.value === 0)) {
       clearTimeout(timeOut);
       timeOut = setTimeout(() => {
@@ -229,6 +240,8 @@ export function dash(lang, totalMoney, currency, bodyElement, indeElement, track
       localStorage.setItem('trackerIn' , JSON.stringify(trackerIn));
       localStorage.setItem('trackerOut', JSON.stringify(trackerOut));
       
+      totalElement.innerHTML = totalAll(trackerIn, trackerOut, totalMoney);
+      rightColor();
       htmlChange();
     };
   });
@@ -240,9 +253,5 @@ export function dash(lang, totalMoney, currency, bodyElement, indeElement, track
     date.value = '';
     money.value = '';
     note.value = '';
-    console.log(trackerIn);
-    console.log(trackerOut);
   };
-
-
 }

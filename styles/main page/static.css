@@ -12,6 +12,7 @@ body {
 }
 body {
   padding-top: 100px;
+  padding-bottom: 30px;
   background-color: rgb(232, 232, 232);         
   color: rgb(232, 232, 232);
   display: flex;

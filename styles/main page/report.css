@@ -1,0 +1,96 @@
+.main-section-r {
+  width: 95%;
+  height: 100%;
+  margin:10px;
+  max-width: 900px;
+  height: fit-content;
+  background-color: white;
+  display: flex;
+  flex-direction: column;
+  font-family: "Beiruti", arial;
+  border-radius: 5px;
+  box-shadow: 0px 2px 10px 8px rgba(0, 0, 0, 0.15);
+  color: black;
+  padding: 10px;
+}
+.the-total-div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border: 1px solid rgba(196, 196, 196, 0.87);
+  margin: 13px 22px 13px 22px;
+  border-radius: 5px;
+}
+.in-total,
+.out-total {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 26px;
+}
+.in-value,
+.out-value {
+  font-family: "Inconsolata", monospace;
+}
+.in-value {
+  color: rgb(49, 176, 49);
+}
+.out-value {
+  color: rgb(235, 35, 35);
+}
+
+.container-1-div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+}
+.buttons-div {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  width: 95%;
+  border: 1px solid rgba(196, 196, 196, 0.87);
+  border-bottom: 0px;
+  border-top-left-radius: 4px;
+  border-top-right-radius: 4px;
+  margin-bottom: -2px;
+}
+
+.year-1,
+.month-1 {
+  height: 30px;
+  width: 100px;
+  margin-bottom: 2px;
+  background-color: #d6d6d6;
+  font-family: "Beiruti", arial;
+  border: none;
+  border-radius: 4px;
+  font-size: 17px;
+  transition: all 0.15s;
+  cursor: pointer;
+}
+.year-1 {
+  border-top-right-radius: 0;
+  border-bottom-right-radius: 0;
+}
+.month-1 {
+  border-top-left-radius: 0;
+  border-bottom-left-radius: 0;
+}
+.active {
+  box-shadow: inset 0px 2px 4px 3px rgba(0, 0, 0, 0.15);
+}
+.can-div-1 {
+  width: 95%;
+  height: 100%;
+  border: 1px solid rgba(196, 196, 196, 0.87);
+  border-radius: 4px;
+  border-top-left-radius: 0px;
+}
+
+.chart-1 {
+  width: 100%;
+}
