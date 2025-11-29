@@ -115,7 +115,7 @@ font-family: "Beiruti", arial;*/
   display: flex;
   align-items: center;
   justify-content: space-between;
-  height: 30px;
+  height: 40px;
   width: 100%;
 }
 .date {
@@ -123,6 +123,7 @@ font-family: "Beiruti", arial;*/
   font-family: "Inconsolata", monospace;
 }
 .discrip {
+  width: 40%;
   font-family: "Beiruti", arial;
   font-size: 26px;
   font-weight: 500;

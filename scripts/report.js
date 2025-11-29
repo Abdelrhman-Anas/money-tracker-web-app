@@ -107,15 +107,17 @@ export function repo(bodyElement, indeElement, Chart, lang, trackerIn, trackerOu
     const todayDate = new Date();
     const fristDayMonth = new Date(todayDate.getFullYear(),todayDate.getMonth(), 1);
     const lastDayMonth = new Date(todayDate.getFullYear(),todayDate.getMonth(), 30);
-    trackerIn.forEach((trans) => {
+    trackerIn.forEach((trans, index) => {
       const transDate = new Date(trans.fullDate);
-      if (transDate > fristDayMonth && transDate < lastDayMonth) {
+      if (transDate >= fristDayMonth && transDate <= lastDayMonth) {
+        console.log(`${index}, ${transDate}`);
         resultIn.push(trans);
-      }
+      };
     });
-    trackerOut.forEach((trans) => {
+    trackerOut.forEach((trans, index) => {
       const transDate = new Date(trans.fullDate);
-      if (transDate > fristDayMonth && transDate < lastDayMonth) {
+      if (transDate >= fristDayMonth && transDate <= lastDayMonth) {
+        console.log(`${index}, ${transDate}`);
         resultOut.push(trans);
       }
     });
@@ -148,17 +150,17 @@ export function repo(bodyElement, indeElement, Chart, lang, trackerIn, trackerOu
         const data = el.money;
         const fullDate = el.fullDate;
         const day = new Date(fullDate).getDate();
-        const dayNum = Number(day)
+        const dayNum = Number(day);
         if (dayNum === nDay) {
           i = dayNum;
           dataF = data;
-        } 
+        };
       });
       if (i > 0) {
         resultIn.push(dataF);
       } else if (i === 0) {
         resultIn.push(i);
-      }
+      };
     });
     days.forEach((nDay) => {
       let i = 0
@@ -200,7 +202,7 @@ export function repo(bodyElement, indeElement, Chart, lang, trackerIn, trackerOu
     trackerOut.forEach((trans) => {
       const fullDate = trans.fullDate;
       const date = new Date(fullDate);
-      if (date < lastDayYear && date > fristDayYear) {
+      if (date <= lastDayYear && date >= fristDayYear) {
         resultOut.push(trans);
       }
     });
