@@ -146,16 +146,11 @@ subButton.addEventListener('click', () => {
     error3.innerHTML = 'please choose a currency.'
   }
   if (co && la && cu && to && (nameValue.length > 0)) {
-    userName = nameValue;
-    totalMoney = to;
-    userCountry = co;
-    language = la;
-    currency = cu;
-    localStorage.setItem('userName', JSON.stringify(userName));
-    localStorage.setItem('totalMoney', JSON.stringify(totalMoney));
-    localStorage.setItem('country', JSON.stringify(userCountry));
-    localStorage.setItem('language', JSON.stringify(language));
-    localStorage.setItem('currency', JSON.stringify(currency));
+    localStorage.setItem('userName', JSON.stringify(nameValue));
+    localStorage.setItem('totalMoney', JSON.stringify(to));
+    localStorage.setItem('country', JSON.stringify(co));
+    localStorage.setItem('language', JSON.stringify(la));
+    localStorage.setItem('currency', JSON.stringify(cu));
     console.log('finished');
     location.replace("main.html");
   } else {

@@ -72,7 +72,7 @@ export function dash(lang, totalMoney, currency, bodyElement, indeElement, track
       `<div class="calc-area">
         <div class="title">Net Worth :</div>
         <div class="total-div">
-          <div class="total">${totalAll(trackerIn, trackerOut, totalMoney)}</div>
+          <div class="total"></div>
           <div class="currunt-cur">${currency}</div>
         </div>
       </div>
@@ -131,6 +131,7 @@ export function dash(lang, totalMoney, currency, bodyElement, indeElement, track
   };
   //
   const totalElement = document.querySelector('.total');
+  totalElement.innerHTML = totalAll(trackerIn, trackerOut, totalMoney);
   rightColor();
   function rightColor() {
     totalElement.classList.remove('total-if-po', 'total-if-ne');
