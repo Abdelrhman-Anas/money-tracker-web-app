@@ -22,7 +22,7 @@ export function trans(bodyElement, indeElement, trackerIn, trackerOut, lang, cur
       `<div class="calc-div">
         <div class="total-in">
           <div class="title-t">اجمالي الدخل :</div>
-          <div class="value-div i">
+          <div class="value-div ie">
             <span class="value-in">${totalIn(trackerIn)}</span> <span class="curancyy">${currency}</span>
           </div>
         </div>
@@ -35,7 +35,7 @@ export function trans(bodyElement, indeElement, trackerIn, trackerOut, lang, cur
         <div class="total-all">
           <div class="title-t">اجمالي الثروه :</div>
           <div class="value-div all">
-            <span class="value-all">${totalAll(trackerIn, trackerOut)}</span> <span class="curancyy">${currency}</span>
+            <span class="value-all">${totalAll(trackerIn, trackerOut, totalMoney)}</span> <span class="curancyy">${currency}</span>
           </div>
         </div>
       </div>`;
