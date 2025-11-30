@@ -2,11 +2,16 @@ import * as ChartJs from "https://cdn.jsdelivr.net/npm/chart.js@4.5.1/+esm";
 const { Chart, registerables } = ChartJs;
 Chart.register(...registerables);
 import { countries } from '../data/countries.js';
-import { userName, totalMoney, country, language, currency, trackerIn, trackerOut } from '../data/user-data.js';
+import { languages } from "../data/language.js";
+import { userName, totalMoney, userCountry, language, currency, trackerIn, trackerOut } from '../data/user-data.js';
 import { dash } from './dashbourd.js';
 import { trans } from './transactions.js'
 import { repo } from './report.js'
+import { sitt } from './sitting.js'
 import { totalIn, totalOut, totalAll } from "./calculations.js";
+if (userName === '' || userName === undefined || userName === null) {
+  location.replace("account.html");
+}
 //// html elements ////
 // html elements that contain the the pages name
 const dashName = document.querySelector('.page1');//dashbourd
@@ -29,7 +34,7 @@ const sitElement = document.querySelector('.sittings-div');
 ///// the static part/////
 nameName.innerHTML = userName;
 countries.forEach((coun) => {
-  if (coun.code = country) {
+  if (coun.code === userCountry) {
     document.querySelector('.country-div').innerHTML = `<span class="fi fi-${coun.code}"></span>`
   }
 });
@@ -58,12 +63,16 @@ dashElement.addEventListener('click', () => {
 });
 // transactions
 transElement.addEventListener('click', () => {
-  switchPage(1)
+  switchPage(1);
 });
 // reports 
 repoElement.addEventListener('click', () => {
-  switchPage(2)
+  switchPage(2);
 });
+// sittings 
+sitElement.addEventListener('click', () => {
+  switchPage(3);
+})
 thePage();
 function thePage() {
   if (page === 0) {
@@ -73,6 +82,6 @@ function thePage() {
   } else if (page === 2) {
     repo(bodyElement, indeElement, Chart, language, trackerIn, trackerOut, totalIn, totalOut);
   } else if (page === 3) {
-    sitt();
+    sitt(bodyElement, indeElement, userName, totalMoney, userCountry, language, currency, trackerIn, trackerOut, countries, languages);
   }
 };

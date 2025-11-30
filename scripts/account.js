@@ -1,7 +1,7 @@
 import { countries } from '../data/countries.js';
 import { languages } from '../data/language.js';
-import { userName, totalMoney, country, language, currency } from '../data/user-data.js';
-//data variables
+import { userName, totalMoney, userCountry, language, currency } from '../data/user-data.js';
+//data variablescountry
 let to;
 let co;
 let la;
@@ -144,19 +144,20 @@ subButton.addEventListener('click', () => {
   };
   if (cu === undefined) {
     error3.innerHTML = 'please choose a currency.'
-  };userName, TotalMoney, country, language, currency
+  }
   if (co && la && cu && to && (nameValue.length > 0)) {
     userName = nameValue;
     totalMoney = to;
-    country = co;
+    userCountry = co;
     language = la;
     currency = cu;
     localStorage.setItem('userName', JSON.stringify(userName));
     localStorage.setItem('totalMoney', JSON.stringify(totalMoney));
-    localStorage.setItem('country', JSON.stringify(country));
+    localStorage.setItem('country', JSON.stringify(userCountry));
     localStorage.setItem('language', JSON.stringify(language));
     localStorage.setItem('currency', JSON.stringify(currency));
     console.log('finished');
+    location.replace("main.html");
   } else {
     console.log('failed');
   };
