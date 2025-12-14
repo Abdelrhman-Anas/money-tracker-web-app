@@ -131,8 +131,8 @@ subButton.addEventListener('click', () => {
   if (nameValue.length === 0 || nameValue === undefined || nameValue === null) {
     error1.innerHTML = 'Please put a name.'
   };
-  if (moneyValue.length === 0 || moneyValue === null || moneyValue === undefined) {
-    to = 0;
+  if (moneyValue.length === 0 || moneyValue === null || moneyValue === undefined || moneyValue === '' ) {
+    to = '0';
   } else {
     to = moneyValue;
   };
@@ -145,7 +145,7 @@ subButton.addEventListener('click', () => {
   if (cu === undefined) {
     error3.innerHTML = 'please choose a currency.'
   }
-  if (co && la && cu && to && (nameValue.length > 0)) {
+  if ((co) && (la) && (cu) && (to) && (nameValue.length > 0)) {
     localStorage.setItem('userName', JSON.stringify(nameValue));
     localStorage.setItem('totalMoney', JSON.stringify(to));
     localStorage.setItem('country', JSON.stringify(co));

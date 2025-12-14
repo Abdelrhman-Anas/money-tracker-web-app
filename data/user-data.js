@@ -1,7 +1,7 @@
 //the user name
-export let userName = JSON.parse(localStorage.getItem('userName')) || 'abdo';
+export let userName = JSON.parse(localStorage.getItem('userName')) || '';
 // your net worth before using the app
-export let totalMoney = JSON.parse(localStorage.getItem('totalMoney')) || '20000';
+export let totalMoney = JSON.parse(localStorage.getItem('totalMoney')) || '';
 // the user country
 export let userCountry = JSON.parse(localStorage.getItem('country')) || 'eg';
 // user language
